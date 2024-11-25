@@ -28,5 +28,5 @@ This project addresses the critical challenge of detecting fraudulent financial 
 Input transaction details via the app’s sidebar (e.g., transaction type, amount, balances) and click "Predict" to determine if the transaction is fraudulent.
 
 ### Batch Prediction
-Upload a CSV file containing transaction records. The app will process the data and provide predictions for each transaction.
+Upload a CSV file containing transaction records. The app will process the data and provide the model evaluation.
 
