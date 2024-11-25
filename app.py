@@ -36,7 +36,20 @@ def app():
         df = pd.read_csv(uploaded_file)
         st.success("Dataset uploaded successfully!")
         st.write("Preview of Uploaded Dataset:")
-        st.write(df.head())
+        st.write(df.head(5))
+
+        
+        # Prepare input data (drop 'isFraud' column and select the necessary columns)
+        df_test = df.copy()
+        X = df.drop(columns=['isFraud'])
+
+        # Make predictions for the entire dataset at once
+        df_test['predicted_fraud'] = model.predict(X)
+
+        # Show predictions along with the relevant columns
+        st.write("Predictions for the uploaded data:")
+        st.write(df_test[['step', 'type', 'amount', 'isFraud', 'predicted_fraud']].head(10))  # Show only a few rows for better readability
+        
     else:
         # Load a default dataset
         df = pd.read_csv('fraud_detection_test_data.csv')
@@ -90,10 +103,9 @@ def app():
             st.sidebar.write("✅ **This transaction is Not Fraudulent.**")
 
     # Model evaluation metrics
-    if st.checkbox("Show Trained Model Metrics"):
+    if st.checkbox("Show Model Metrics"):
         st.subheader("Evaluation Metrics")
         y_test = df['isFraud']  
-        # Replace with your actual features
         y_pred = model.predict(df.drop(columns=['isFraud']))  
         accuracy = accuracy_score(y_test, y_pred)
         f1 = f1_score(y_test, y_pred)
