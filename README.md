@@ -27,7 +27,7 @@ This project addresses the critical challenge of detecting fraudulent financial 
 The **XGBoost model** outperforms other models in terms of training time and evaluation metrics:
 - **Accuracy**: 99.98%
 - **F1 Score**: 0.90
-- 
+
 ## Example Usage
 ### Predicting Real-Time Transactions
 Input transaction details via the app’s sidebar (e.g., transaction type, amount, balances) and click "Predict" to determine if the transaction is fraudulent.
@@ -35,7 +35,3 @@ Input transaction details via the app’s sidebar (e.g., transaction type, amoun
 ### Batch Prediction
 Upload a CSV file containing transaction records. The app will process the data and provide predictions for each transaction.
 
-## How to Use
-1. Clone the repository:  
-   ```bash
-   git clone https://github.com/your-repo/fraud-detection.git
