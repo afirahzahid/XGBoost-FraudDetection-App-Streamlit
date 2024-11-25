@@ -14,7 +14,7 @@ This project addresses the critical challenge of detecting fraudulent financial 
 
 ## File Details
 - **`.gitignore`**: Ensures temporary files, logs, and sensitive data aren't tracked.
-- **`XGBoost_fraud_detection_model.pkl`**: Serialized model trained for fraud detection.
+- **`XGBoost_fraud_detection_model.pkl`**: Trained model for fraud detection.
 - **`app.py`**: Streamlit application allowing users to:
   - Upload datasets for batch fraud prediction.
   - Input transaction details manually for real-time predictions.
